@@ -8,6 +8,7 @@ public class RoomChooser : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		/*
 		if (deadBodies < 5)
 		{
 			x = deadBodies;
@@ -27,6 +28,7 @@ public class RoomChooser : MonoBehaviour {
 			Instantiate (kitchen);
 			
 		}
+		*/
 	}
 	
 	// Update is called once per frame

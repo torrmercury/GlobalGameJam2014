@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TenentAI : MonoBehaviour {
-	bool dead = 0;
+	bool dead = false;
 	public int deadBodies;
 	int bodies;
 	// Use this for initialization
@@ -14,11 +14,11 @@ public class TenentAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (dead = 1)
+		if (dead == true)
 		{
 			bodies += 1;
 			deadBodies = bodies;
-			Instantiate (body);
+			//Instantiate (body);
 			Destroy (this);
 		}
 	}
