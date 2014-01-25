@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Rooms\RoomChooser.cs">
+    <Files>
+      <File FileName="Assets\Rooms\RoomChooser.cs" Line="17" Column="27" />
+      <File FileName="Assets\Rooms\bathroom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Rooms\bedroom.cs" Line="1" Column="1" />
+      <File FileName="Assets\Rooms\kitchen.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
