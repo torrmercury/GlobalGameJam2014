@@ -87,7 +87,7 @@ GameObject:
   - 23: {fileID: 514024886}
   m_Layer: 0
   m_Name: hunger1
-  m_TagString: hunger
+  m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - 23: {fileID: 951784400}
   m_Layer: 0
   m_Name: hunger
-  m_TagString: hunger
+  m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -265,7 +265,7 @@ GameObject:
   - 114: {fileID: 1093654067}
   m_Layer: 0
   m_Name: sex4
-  m_TagString: sex
+  m_TagString: Sex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - 23: {fileID: 1151421059}
   m_Layer: 0
   m_Name: hunger2
-  m_TagString: hunger
+  m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,7 +415,7 @@ GameObject:
   - 114: {fileID: 1165619041}
   m_Layer: 0
   m_Name: sex 5
-  m_TagString: sex
+  m_TagString: Sex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,7 +496,7 @@ GameObject:
   - 114: {fileID: 1193855634}
   m_Layer: 0
   m_Name: sex2
-  m_TagString: sex
+  m_TagString: Sex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +576,7 @@ GameObject:
   - 23: {fileID: 1243750237}
   m_Layer: 0
   m_Name: hunger3
-  m_TagString: hunger
+  m_TagString: Hunger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -796,7 +796,7 @@ GameObject:
   - 114: {fileID: 1831247519}
   m_Layer: 0
   m_Name: sex3
-  m_TagString: sex
+  m_TagString: Sex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -877,7 +877,7 @@ GameObject:
   - 114: {fileID: 2063637911}
   m_Layer: 0
   m_Name: sex1
-  m_TagString: sex
+  m_TagString: Sex
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
