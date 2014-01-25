@@ -3,6 +3,9 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - Wall Behind
+  - Wall Front
+  - 
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -48,6 +51,10 @@ TagManager:
   - name: Floor
     userID: 1
     uniqueID: 1821449251
+    locked: 0
+  - name: Foreground
+    userID: 4
+    uniqueID: 2729631361
     locked: 0
   - name: Walls inFront
     userID: 3
