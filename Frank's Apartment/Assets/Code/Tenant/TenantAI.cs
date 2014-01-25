@@ -7,6 +7,7 @@ public class TenantAI : MonoBehaviour {
 	int Health = 5;
 	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
 	string Objective;
+	GameObject Destination;
 
 	public int deadBodies;
 	int bodies;
@@ -75,18 +76,22 @@ public class TenantAI : MonoBehaviour {
 		//make an array with all the objects that will satisfy the goal.
 		GameObject[] Choices = GameObject.FindGameObjectsWithTag(Objective);
 		print (Choices.Length);
-		print (transform.position);
-		//loop to eliminate all but closest goal-satisfying-objective from the array.
-//		while (Choices[1]) {
-//			int Distance1 = Vector3.Distance(transform.position, Choices[0].position);
-//			int Distance2 = Vector3.Distance(transform.position, Choices[1].position);
-//			if (Distance1 < Distance2) {
-//				Array.RemoveAt(1);
-//			}
-//				else {
-//					Array.RemoveAt(0);
-//				}
-//		}
+		//set Destination as the first index in the array as a starting point for use in the coming loop.
+		Destination = Choices[0];
+		//loop to find the closest goal-satisfying-object and set it as the Destination.
+		//for loop to cycle through all the choices with n.
+		for (int n = 0; n < Choices.Length; n++) {
+			//set the distance between AI/choices[n] and Destination/AI to compare in if statement. 
+			float Distance1 = Vector3.Distance(Choices[n].transform.position, transform.position);
+			print ("Distance 1 is " + Distance1);
+			float Distance2 = Vector3.Distance(Destination.transform.position, transform.position);
+			print ("Distance 2 is " + Distance2);
+			//Compare the distances, set the shorter distance as Destination.
+			if (Distance1 < Distance2) {
+				Destination = Choices[n];
+			}
+		}
+		print (Destination);
 	}
 
 }
