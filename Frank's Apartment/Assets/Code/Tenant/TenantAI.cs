@@ -2,11 +2,14 @@
 using System.Collections;
 
 public class TenentAI : MonoBehaviour {
+<<<<<<< HEAD
 
 	int Health = 5;
 	string[] Goals = new string[] {"hunger", "sleep", "sex", "excretion"};
 	string Objective;
 
+=======
+>>>>>>> master
 	bool dead = false;
 	public int deadBodies;
 	int bodies;
@@ -27,14 +30,19 @@ public class TenentAI : MonoBehaviour {
 		//choose new path if interrupted
 			//Interruption
 
+<<<<<<< HEAD
 		if (Input.GetKeyDown("k")) {
 		    ChooseGoal();
 		}
 
 		/*if (dead = 1) {
+=======
+		if (dead == true)
+		{
+>>>>>>> master
 			bodies += 1;
 			deadBodies = bodies;
-			Instantiate (body);
+			//Instantiate (body);
 			Destroy (this);
 		}*/
 	}
