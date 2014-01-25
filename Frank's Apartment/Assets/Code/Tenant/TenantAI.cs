@@ -5,7 +5,7 @@ public class TenantAI : MonoBehaviour {
 
 
 	int Health = 5;
-	string[] Goals = new string[] {"hunger", "sleep", "sex", "excretion"};
+	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
 	string Objective;
 
 
@@ -51,16 +51,16 @@ public class TenantAI : MonoBehaviour {
 		int Goal = Random.Range (1, 5);
 
 		if (Goal == 1) {
-			Objective = "hunger";
+			Objective = "Hunger";
 		}
 			else if (Goal == 2) {
-			Objective = "sleep";
+			Objective = "Sleep";
 		}
 			else if (Goal == 3) {
-			Objective = "sex";
+			Objective = "Sex";
 		}
 			else if (Goal == 4) {
-			Objective = "excretion";
+			Objective = "Excretion";
 		}
 
 		//figure out how to print to test objective selection
@@ -73,7 +73,8 @@ public class TenantAI : MonoBehaviour {
 	void ChooseObjective () {
 		//make an array with all the objects that will satisfy the goal.
 		GameObject[] Choices = GameObject.FindGameObjectsWithTag(Objective);
-		print (Choices);
+		print (Choices.Length);
+		print (transform.position);
 		//loop to eliminate all but closest goal-satisfying-objective from the array.
 //		while (Choices[1]) {
 //			int Distance1 = Vector3.Distance(transform.position, Choices[0].position);
