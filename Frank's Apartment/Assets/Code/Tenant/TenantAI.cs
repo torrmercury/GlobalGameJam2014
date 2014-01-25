@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class TenantAI : MonoBehaviour {
-
+    public body spawnBody;
 
 	int Health = 5;
 	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
@@ -39,9 +39,10 @@ public class TenantAI : MonoBehaviour {
     //when the character enters/touches a trigger, it dies
     void OnTriggerEnter ()
     {
+        body deadBody;
         bodies += 1;
         deadBodies = bodies;
-        //Instantiate (body);
+        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
         Destroy(this);
     }
 
