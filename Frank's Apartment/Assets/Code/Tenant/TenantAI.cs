@@ -2,25 +2,24 @@
 using System.Collections;
 
 public class TenantAI : MonoBehaviour {
-
+    public body spawnBody;
 
 	int Health = 5;
 	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
 	string Objective;
 	GameObject Destination;
 
-
-	bool dead = false;
 	public int deadBodies;
 	int bodies;
 	
 	// Use this for initialization
 	void Start () {
+        //dead body count
+        bodies = deadBodies;
+
 		//array of goals
 		//hunger, sleep, sex, excretion
 		//choose path
-		bodies = deadBodies;
-
 		//Run function to choose Objective
 		ChooseGoal();
 	}
@@ -36,15 +35,17 @@ public class TenantAI : MonoBehaviour {
 		    ChooseGoal();
 		}
 
-		/*if (dead = 1) {
-		if (dead == true)
-		{
-			bodies += 1;
-			deadBodies = bodies;
-			//Instantiate (body);
-			Destroy (this);
-		}*/
 	}
+
+    //when the character enters/touches a trigger, it dies
+    void OnTriggerEnter ()
+    {
+        body deadBody;
+        bodies += 1;
+        deadBodies = bodies;
+        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
+        Destroy(this);
+    }
 
 	//function to choose an Objective
 	void ChooseGoal () {
