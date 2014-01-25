@@ -2,14 +2,13 @@
 using System.Collections;
 
 public class TenentAI : MonoBehaviour {
-<<<<<<< HEAD
+
 
 	int Health = 5;
 	string[] Goals = new string[] {"hunger", "sleep", "sex", "excretion"};
 	string Objective;
 
-=======
->>>>>>> master
+
 	bool dead = false;
 	public int deadBodies;
 	int bodies;
@@ -19,8 +18,9 @@ public class TenentAI : MonoBehaviour {
 		//array of goals
 		//hunger, sleep, sex, excretion
 		//choose path
-
 		bodies = deadBodies;
+
+		//Run function to choose Objective
 		ChooseGoal();
 	}
 	
@@ -30,16 +30,14 @@ public class TenentAI : MonoBehaviour {
 		//choose new path if interrupted
 			//Interruption
 
-<<<<<<< HEAD
+		//Choose new Objective test
 		if (Input.GetKeyDown("k")) {
 		    ChooseGoal();
 		}
 
 		/*if (dead = 1) {
-=======
 		if (dead == true)
 		{
->>>>>>> master
 			bodies += 1;
 			deadBodies = bodies;
 			//Instantiate (body);
@@ -47,22 +45,25 @@ public class TenentAI : MonoBehaviour {
 		}*/
 	}
 
+	//function to choose an Objective
 	void ChooseGoal () {
-		int Goal = Random.Range (0, 100);
+		//roll from 1 to 4 to make choice
+		int Goal = Random.Range (1, 4);
 
-		if (0 <= Goal <= 24) {
+		if (Goal == 1) {
 			Objective = "hunger";
 		}
-			else if (25 <= Goal <= 49) {
+			else if (Goal == 2) {
 			Objective = "sleep";
 		}
-			else if (50 <= Goal <= 74) {
+			else if (Goal == 3) {
 			Objective = "sex";
 		}
-			else if (75 <= Goal <= 100) {
+			else if (Goal == 4) {
 			Objective = "excretion";
 		}
 
-		console.log (Objective);
+		//figure out how to print to test objective selection
+		//Debug.Log (Objective);
 	}
 }
