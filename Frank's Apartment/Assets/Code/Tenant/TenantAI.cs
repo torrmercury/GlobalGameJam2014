@@ -8,18 +8,17 @@ public class TenantAI : MonoBehaviour {
 	string[] Goals = new string[] {"hunger", "sleep", "sex", "excretion"};
 	string Objective;
 
-
-	bool dead = false;
 	public int deadBodies;
 	int bodies;
 	
 	// Use this for initialization
 	void Start () {
+        //dead body count
+        bodies = deadBodies;
+
 		//array of goals
 		//hunger, sleep, sex, excretion
 		//choose path
-		bodies = deadBodies;
-
 		//Run function to choose Objective
 		ChooseGoal();
 	}
@@ -35,15 +34,16 @@ public class TenantAI : MonoBehaviour {
 		    ChooseGoal();
 		}
 
-		/*if (dead = 1) {
-		if (dead == true)
-		{
-			bodies += 1;
-			deadBodies = bodies;
-			//Instantiate (body);
-			Destroy (this);
-		}*/
 	}
+
+    //when the character enters/touches a trigger, it dies
+    void OnTriggerEnter ()
+    {
+        bodies += 1;
+        deadBodies = bodies;
+        //Instantiate (body);
+        Destroy(this);
+    }
 
 	//function to choose an Objective
 	void ChooseGoal () {
