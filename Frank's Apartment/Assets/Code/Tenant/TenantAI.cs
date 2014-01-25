@@ -73,18 +73,18 @@ public class TenantAI : MonoBehaviour {
 	void ChooseObjective () {
 		//make an array with all the objects that will satisfy the goal.
 		GameObject[] Choices = GameObject.FindGameObjectsWithTag(Objective);
-		print (Choices);
+		print (Choices.Length);
 		//loop to eliminate all but closest goal-satisfying-objective from the array.
-//		while (Choices[1]) {
-//			int Distance1 = Vector3.Distance(transform.position, Choices[0].position);
-//			int Distance2 = Vector3.Distance(transform.position, Choices[1].position);
-//			if (Distance1 < Distance2) {
-//				Array.RemoveAt(1);
-//			}
-//				else {
-//					Array.RemoveAt(0);
-//				}
-//		}
+		while (Choices[1]) {
+			int Distance1 = Vector3.Distance(transform.position, Choices[0].position);
+			int Distance2 = Vector3.Distance(transform.position, Choices[1].position);
+			if (Distance1 < Distance2) {
+				Array.RemoveAt(1);
+			}
+				else {
+					Array.RemoveAt(0);
+				}
+		}
 	}
 
 }
