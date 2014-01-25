@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TenentAI : MonoBehaviour {
+public class TenantAI : MonoBehaviour {
 
 
 	int Health = 5;
@@ -31,7 +31,7 @@ public class TenentAI : MonoBehaviour {
 			//Interruption
 
 		//Choose new Objective test
-		if (Input.GetKeyDown("k")) {
+		if (Input.GetKeyDown("space")) {
 		    ChooseGoal();
 		}
 
@@ -48,7 +48,7 @@ public class TenentAI : MonoBehaviour {
 	//function to choose an Objective
 	void ChooseGoal () {
 		//roll from 1 to 4 to make choice
-		int Goal = Random.Range (1, 4);
+		int Goal = Random.Range (1, 5);
 
 		if (Goal == 1) {
 			Objective = "hunger";
@@ -65,5 +65,26 @@ public class TenentAI : MonoBehaviour {
 
 		//figure out how to print to test objective selection
 		//Debug.Log (Objective);
+		Debug.Log(Objective);
+		ChooseObjective();
+
 	}
+	//function to choose the AI's intended path based on their goal and what is closest.
+	void ChooseObjective () {
+		//make an array with all the objects that will satisfy the goal.
+		GameObject[] Choices = GameObject.FindGameObjectsWithTag(Objective);
+		print (Choices);
+		//loop to eliminate all but closest goal-satisfying-objective from the array.
+//		while (Choices[1]) {
+//			int Distance1 = Vector3.Distance(transform.position, Choices[0].position);
+//			int Distance2 = Vector3.Distance(transform.position, Choices[1].position);
+//			if (Distance1 < Distance2) {
+//				Array.RemoveAt(1);
+//			}
+//				else {
+//					Array.RemoveAt(0);
+//				}
+//		}
+	}
+
 }
