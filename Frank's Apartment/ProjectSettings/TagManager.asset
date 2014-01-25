@@ -6,6 +6,10 @@ TagManager:
   - Wall Behind
   - Wall Front
   - 
+  - sex
+  - excretion
+  - sleep
+  - hunger
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
