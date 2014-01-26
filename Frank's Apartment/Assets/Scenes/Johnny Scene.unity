@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2264ab6d4508fbe4091929b6009ca947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnBody: {fileID: 0}
+  lineMaterial: {fileID: 0}
   deadBodies: 0
 --- !u!4 &575129914
 Transform:
