@@ -4,6 +4,7 @@ using Vectrosity; // C#
 
 public class TenantAI : MonoBehaviour {
     public body spawnBody;
+    public static int scareCount = 0;
 
 	int Health = 5;
 	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
@@ -22,6 +23,8 @@ public class TenantAI : MonoBehaviour {
 	void Start () {
         //dead body count
         bodies = deadBodies;
+
+
 		//array of goals
 		//hunger, sleep, sex, excretion
 		//choose path
