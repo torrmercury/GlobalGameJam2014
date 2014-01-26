@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class door : MonoBehaviour {
-    bool clicked = false;
-    bool locked = false;
+public class couch : MonoBehaviour {
+    bool clicked;
     Vector3 screenPoint;
     Vector3 offset;
 
@@ -13,14 +12,14 @@ public class door : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void Update () 
     {
-
+        
 	}
 
     void OnMouseDown()
     {
-        //clicked?
+        //was it clicked?
         if (clicked == false)
         {
             clicked = true;
@@ -30,24 +29,21 @@ public class door : MonoBehaviour {
             clicked = false;
         }
 
-        //lock the door
+        //spring pops out
         if (clicked == false)
         {
-            locked = false;
+            renderer.enabled = false;
+            collider.isTrigger = false;
         }
         else if (clicked == true)
         {
-            locked = true;
-        }
-
-        //if locked character cannot open door
-        if (locked == false)
-        {
-            collider.enabled = false;
-        }
-        else if (locked == true)
-        {
-            collider.enabled = true;
+            TenantAI.scareCount += 1;
+            renderer.enabled = true;
+            collider.isTrigger = true;
+            
+            //needs a section on making the character go flying when the spring comes up
+            //most likely use "public static Vector3 position" in the TenantAI code
+            //which translates here as TenantAI.position
         }
 
         //for movement/drag
@@ -55,7 +51,7 @@ public class door : MonoBehaviour {
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
 
-    //move the door
+    //move the couch
     void OnMouseDrag()
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
