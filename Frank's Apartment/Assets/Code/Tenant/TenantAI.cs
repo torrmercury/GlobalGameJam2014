@@ -5,29 +5,24 @@ using Vectrosity; // C#
 public class TenantAI : MonoBehaviour {
     public body spawnBody;
     public static int scareCount = 0;
-
 	int Health = 5;
-	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
+	public int deadBodies;
+	int bodies;
+
+//	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
 	string Objective;
 	GameObject Destination;
 
-	VectorLine myLine;
 	Vector3 LineOrigin;
 	Vector3 LineFinish;
+	//Vector3[] linePoints;
+	VectorLine myLine;
 	public Material lineMaterial;
 
-	public int deadBodies;
-	int bodies;
-	
-	// Use this for initialization
 	void Start () {
         //dead body count
         bodies = deadBodies;
 
-
-		//array of goals
-		//hunger, sleep, sex, excretion
-		//choose path
 		//Run function to choose Objective
 		ChooseGoal();
 	}
@@ -41,6 +36,8 @@ public class TenantAI : MonoBehaviour {
 		if (Input.GetKeyDown("space")) {
 		    ChooseGoal();
 		}
+
+		transform.position = Vector3.Lerp(transform.position, Destination.transform.position, Time.deltaTime);
 
 	}
 
@@ -98,7 +95,7 @@ public class TenantAI : MonoBehaviour {
 		}
 		print (Destination);
 		//draw line to destination
-		myLine = VectorLine.SetLine3D(Color.green, LineOrigin, LineFinish);
+		myLine = VectorLine.SetLine3D(Color.red, LineOrigin, LineFinish);
 
 		
 	}
