@@ -38,10 +38,10 @@ public class TenantAI : MonoBehaviour {
 		    ChooseGoal();
 		}
 
-//		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
-//		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
-//		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
-//		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
+		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
+		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
 //		MoveOne();
 //		if (transform.position.x >= Destination.transform.position.x) {
 //			MoveTwo();
@@ -104,8 +104,6 @@ public class TenantAI : MonoBehaviour {
 		print (Destination);
 		//draw line to destination
 		myLine = VectorLine.SetLine3D(Color.red, LineOrigin, LineFinish);
-
-		
 	}
 
 	void SetLinePoints () {
@@ -124,13 +122,13 @@ public class TenantAI : MonoBehaviour {
 //	void MoveOne() {
 //		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
 //		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
-//		transform.position = Vector3.Lerp(transform.position, firstMove, 3*Time.deltaTime);
+//		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
 //
 //	}
 //
 //	void MoveTwo() {
 //		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
 //		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
-//		transform.position = Vector3.Lerp(transform.position, secondMove, 3*Time.deltaTime);
+//		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
 //	}
 }
