@@ -64,7 +64,8 @@ public class TenantAI : MonoBehaviour {
 			transform.localScale = tempScale;
 		}
 
-		if (currentPos - destinyPos < .25 && currentZ - destinyZ < .25) {
+		if (Mathf.Abs(currentPos - destinyPos) < .25 && Mathf.Abs(currentZ - destinyZ) < .25) {
+
 			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
 			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
 			ChooseGoal();
@@ -97,6 +98,15 @@ public class TenantAI : MonoBehaviour {
 //	}
 
 	}
+
+	IEnumerator HoldUp() {
+		yield return new WaitForSeconds(2f);
+		Vector3 firstMove = new Vector3(destinyPos, 1, currentZ);
+		Vector3 secondMove = new Vector3(currentPos, 1, destinyZ);
+		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+	}
+
 void Death () {
 		Destroy(this.transform.gameObject);
 		Instantiate (deadBody, transform.position, Quaternion.Euler(270,270,0));
@@ -120,16 +130,6 @@ void Death () {
         //deadBodies = bodies;
 //        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
     }
-
-	IEnumerator HoldUp() {
-		print ("Wait for it");
-		yield return new WaitForSeconds(2f);
-		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
-		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
-		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
-		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
-		print ("done waiting");
-	}
 
 	//function to choose an Objective
 	void ChooseGoal () {
@@ -184,9 +184,9 @@ void Death () {
 		for (int n = 0; n < Choices.Length; n++) {
 			//set the distance between AI/choices[n] and Destination/AI to compare in if statement. 
 			float Distance1 = Vector3.Distance(Choices[n].transform.position, transform.position);
-			print ("Distance 1 is " + Distance1);
+			//print ("Distance 1 is " + Distance1);
 			float Distance2 = Vector3.Distance(Destination.transform.position, transform.position);
-			print ("Distance 2 is " + Distance2);
+			//print ("Distance 2 is " + Distance2);
 			//Compare the distances, set the shorter distance as Destination.
 			if (Distance1 < Distance2) {
 				Destination = Choices[n];
