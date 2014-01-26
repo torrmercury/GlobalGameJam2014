@@ -5,49 +5,72 @@ public class tvScreen : MonoBehaviour
 {
     Vector3 screenPoint;
     Vector3 offset;
-    bool clicked = false;
+    bool clicked = true;
     float lockedYPos = 1.2f;
+    public AudioClip onSound;
+    public AudioClip offSound;
+    public AudioClip maintain;
 
     // Use this for initialization
     void Start()
     {
-
+        audio.clip = maintain;
+        audio.Play();
+        audio.loop = enabled;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
     void OnMouseDown()
     {
         //was it clicked?
+        //it now talks!!!! WHOOOAAAAAAA I'M FRAAAANK
+
         if (clicked == false)
         {
             clicked = true;
+            Invoke("on", 0f);
+            Invoke("staticPlay", .6f);
+            renderer.enabled = true;
+            TenantAI.scareCount += 1;
         }
         else if (clicked == true)
         {
             clicked = false;
-        }
-
-        //turn the screen on/off
-        if (clicked == true)
-        {
-            renderer.enabled = true;
-            TenantAI.scareCount += 1;
-        }
-        else if (clicked == false)
-        {
+            Invoke("off", 0f);
             renderer.enabled = false;
         }
-
+        
         //for movement/drag
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 4f*Input.mousePosition.y, screenPoint.z));
 
     }
 
+    void on()
+    {
+        audio.clip = onSound;
+        audio.Play();
+    }
+
+    void off()
+    {
+        audio.clip = offSound;
+        audio.Play();
+        audio.loop = false;
+    }
+
+    void staticPlay()
+    {
+        audio.clip = maintain;
+        audio.Play();
+        audio.loop = enabled;
+    }
+    
     //move the tv
     void OnMouseDrag()
     {

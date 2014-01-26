@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class toilet : MonoBehaviour {
-    bool clicked;
+    public static bool toiletClicked;
     Vector3 screenPoint;
     Vector3 offset;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,16 +21,16 @@ public class toilet : MonoBehaviour {
 	{
         //play the water spout
         //was it clicked?
-        if (clicked == false)
+        if (toiletClicked == false)
         {
-            clicked = true;
+            toiletClicked = true;
             audio.Play();
             TenantAI.scareCount += 1;
             collider.isTrigger = true;
         }
-        else if (clicked == true)
+        else if (toiletClicked == true)
         {
-            clicked = false;
+            toiletClicked = false;
             collider.isTrigger = false;
         }
 

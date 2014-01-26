@@ -8,6 +8,8 @@ public class door : MonoBehaviour {
     Vector3 offset;
     float lockedYPos;
     float lockedZPos;
+    public AudioClip lockDoor;
+    public AudioClip unlockDoor;
 
 	// Use this for initialization
 	void Start () {

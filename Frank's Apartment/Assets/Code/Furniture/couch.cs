@@ -24,14 +24,14 @@ public class couch : MonoBehaviour {
         if (couchClicked == false)
         {
             couchClicked = true;
-            collider.isTrigger = false;
+            collider.isTrigger = true;
             
         }
         else if (couchClicked == true)
         {
             
             TenantAI.scareCount += 1;
-            //collider.isTrigger = true;
+            //collider.isTrigger = false;
             
 
             //needs a section on making the character go flying when the spring comes up
