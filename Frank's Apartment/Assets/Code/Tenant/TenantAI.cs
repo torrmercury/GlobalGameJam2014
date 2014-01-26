@@ -13,6 +13,7 @@ public class TenantAI : MonoBehaviour {
 	string Objective;
 	GameObject Destination;
 
+
 	Vector3 LineOrigin;
 	Vector3 LineFinish;
 	//Vector3[] linePoints;
@@ -27,18 +28,24 @@ public class TenantAI : MonoBehaviour {
 		ChooseGoal();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		//start walking path
 		//choose new path if interrupted
 		RefreshLine();
+
 		//Choose new Objective test
 		if (Input.GetKeyDown("space")) {
 		    ChooseGoal();
 		}
 
-		transform.position = Vector3.Lerp(transform.position, Destination.transform.position, Time.deltaTime);
-
+		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
+		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
+		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+//		MoveOne();
+//		if (transform.position.x >= Destination.transform.position.x) {
+//			MoveTwo();
+//	}
 	}
 
     //when the character enters/touches a trigger, it dies
@@ -54,6 +61,7 @@ public class TenantAI : MonoBehaviour {
 	//function to choose an Objective
 	void ChooseGoal () {
 		//roll from 1 to 4 to make choice
+
 		int Goal = Random.Range (1, 5);
 
 		if (Goal == 1) {
@@ -96,8 +104,6 @@ public class TenantAI : MonoBehaviour {
 		print (Destination);
 		//draw line to destination
 		myLine = VectorLine.SetLine3D(Color.red, LineOrigin, LineFinish);
-
-		
 	}
 
 	void SetLinePoints () {
@@ -113,4 +119,16 @@ public class TenantAI : MonoBehaviour {
 		myLine.Draw();
 	}
 
+//	void MoveOne() {
+//		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
+//		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
+//		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
+//
+//	}
+//
+//	void MoveTwo() {
+//		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
+//		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
+//		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+//	}
 }
