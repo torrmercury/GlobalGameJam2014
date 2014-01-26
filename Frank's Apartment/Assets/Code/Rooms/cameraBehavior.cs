@@ -3,6 +3,8 @@ using System.Collections;
 
 public class cameraBehavior : MonoBehaviour {
 
+    Rect windowRect = new Rect(20, 20, 170, 80);
+
 	// Use this for initialization
 	void Start () {
 	
@@ -11,9 +13,22 @@ public class cameraBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-	    //when character moves between rooms, the camera moves to a different room
-        //transparencies happen after the moves
-
-
+	    
 	}
+
+    void OnGUI()
+    {
+        windowRect = GUI.Window(0, windowRect, DoMyWindow, "Menu");
+    }
+    void DoMyWindow(int windowID)
+    {
+        if (GUI.Button(new Rect(10, 20, 150, 20), "Exit to Title Screen"))
+        {
+            Application.LoadLevel("Title");
+        }
+        if (GUI.Button(new Rect(10, 50, 150, 20), "Exit Game"))
+        {
+            Application.Quit();
+        }
+    }
 }
