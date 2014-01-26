@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class door : MonoBehaviour {
-    bool clicked = false;
+    bool clicked = true;
     bool locked = false;
     Vector3 screenPoint;
     Vector3 offset;
     float lockedYPos;
     float lockedZPos;
+    public AudioClip lockDoor;
+    public AudioClip unlockDoor;
 
 	// Use this for initialization
 	void Start () {
@@ -24,33 +26,31 @@ public class door : MonoBehaviour {
     void OnMouseDown()
     {
         //clicked?
-        if (clicked == false)
-        {
-            clicked = true;
-        }
-        else if (clicked == true)
+        //lock the door
+        if (clicked == true)
         {
             clicked = false;
-        }
-
-        //lock the door
-        if (clicked == false)
-        {
             locked = false;
+            audio.clip = unlockDoor;
+            audio.Play();
         }
-        else if (clicked == true)
+        else if (clicked == false)
         {
+            clicked = true;
             locked = true;
+            audio.clip = lockDoor;
+            audio.Play();
         }
 
+        
         //if locked character cannot open door
         if (locked == false)
         {
-            collider.enabled = false;
+            
         }
         else if (locked == true)
         {
-            collider.enabled = true;
+            
         }
         /*
         //for movement/drag
