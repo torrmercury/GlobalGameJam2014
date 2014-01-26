@@ -4,9 +4,9 @@ using Vectrosity; // C#
 
 public class TenantAI : MonoBehaviour {
     public GameObject deadBody;
-	public GameObject self;
 	public GameObject spawnPoint;
 	public GameObject newTenant;
+
 
     public static int scareCount = 0;
 	public int deadBodies;
@@ -27,7 +27,6 @@ public class TenantAI : MonoBehaviour {
 	float destinyPos;
 
 	void Start () {
-		self = GameObject.FindWithTag("Tenant");
 		spawnPoint = GameObject.FindWithTag("Respawn");
         //dead body count
         bodies = deadBodies;
@@ -78,7 +77,7 @@ public class TenantAI : MonoBehaviour {
 //	}
 	}
 void Death () {
-		Destroy(self);
+		Destroy(this.transform.gameObject);
 		Instantiate (deadBody, transform.position, Quaternion.Euler(270,270,0));
 		Instantiate (newTenant, spawnPoint.transform.position, Quaternion.identity);
 	}
@@ -87,6 +86,9 @@ void Death () {
     {
 		if (other.gameObject.tag == "Floor") {
 			print ("OMG I RUN THROUGH WALLS");
+		}
+		else if (other.gameObject.tag == "Corpse") {
+			print ("EWWWWWWW!");
 		}
 		else {
 			Death ();
