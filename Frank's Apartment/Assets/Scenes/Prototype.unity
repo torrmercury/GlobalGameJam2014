@@ -1870,6 +1870,10 @@ Prefab:
       propertyPath: m_TagString
       value: Excretion
       objectReference: {fileID: 0}
+    - target: {fileID: 6500006, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
