@@ -29,6 +29,8 @@ public class TenantAI : MonoBehaviour {
 //	public Material lineMaterial;
 	float currentPos;
 	float destinyPos;
+	float currentZ;
+	float destinyZ;
 
 	void Start () {
 		spawnPoint = GameObject.FindWithTag("Respawn");
@@ -43,19 +45,28 @@ public class TenantAI : MonoBehaviour {
 	void Update () {
 		//set current pos, check vs destination pos to see what direction AI moving, set localScale accordingly.
 		currentPos = transform.position.x;
+		currentZ = transform.position.z;
 //		print ("destination coordinates are " + Destination.transform.position);
 		Vector3 destinationPos = Destination.transform.position;
 		destinyPos = destinationPos.x;
+		destinyZ = destinationPos.z;
 //		destinyPos = Destination.transform.position.x;
 		if (currentPos - destinyPos > 0) {
 			Vector3 tempScale = transform.localScale;
 			tempScale.x = 0.5f;
 			transform.localScale = tempScale;
 		}
+
 		if (currentPos - destinyPos < 0) {
 			Vector3 tempScale = transform.localScale;
 			tempScale.x = -0.5f;
 			transform.localScale = tempScale;
+		}
+
+		if (currentPos - destinyPos < .25 && currentZ - destinyZ < .25) {
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+			ChooseGoal();
 		}
 
 		//start walking path
