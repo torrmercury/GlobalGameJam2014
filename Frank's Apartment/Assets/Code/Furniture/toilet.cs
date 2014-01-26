@@ -18,25 +18,19 @@ public class toilet : MonoBehaviour {
 
 	void OnMouseDown()
 	{
-        //was it clicked?
-        if (clicked == false)
-        {
-            clicked = true;
-        }
-        else if (clicked == true)
-        {
-            clicked = false;
-        }
-
         //play the water spout
         //was it clicked?
         if (clicked == false)
         {
-            
+            clicked = true;
+            audio.Play();
+            TenantAI.scareCount += 1;
+            collider.isTrigger = true;
         }
         else if (clicked == true)
         {
-            TenantAI.scareCount += 1;
+            clicked = false;
+            collider.isTrigger = false;
         }
 
         //for movement/drag
