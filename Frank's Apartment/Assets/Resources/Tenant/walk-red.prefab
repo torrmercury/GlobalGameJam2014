@@ -86,10 +86,10 @@ MonoBehaviour:
   deadBody: {fileID: 100000, guid: d31eeae2b931645d3bcc63db61cdbdc1, type: 2}
   spawnPoint: {fileID: 0}
   newTenant: {fileID: 100000, guid: 2bd3ec911d52a464d88b94fcb7aaf3da, type: 2}
-  hungerBubble: {fileID: 100000, guid: 58621eee912b646acbf97e33924e228a, type: 2}
-  sexBubble: {fileID: 100000, guid: 1ebbbf163fdde46ab87ebfc7eee8211b, type: 2}
-  excretionBubble: {fileID: 100000, guid: ec140f18143424e7ab94dc295f33e1fc, type: 2}
-  sleepBubble: {fileID: 100000, guid: c68221038fc884ef29656360733302e1, type: 2}
+  hungerBubble: {fileID: 100000, guid: ee67286cd673ff449a5f8eab198b5044, type: 2}
+  sexBubble: {fileID: 100000, guid: 5f3d8f81e8081ab4185c172d068205e7, type: 2}
+  excretionBubble: {fileID: 100000, guid: bf6477c718faa9a45978ff7f9165d7ae, type: 2}
+  sleepBubble: {fileID: 100000, guid: 6ae0291345395af46840b553f80d345a, type: 2}
   deadBodies: 0
 --- !u!212 &21200000
 SpriteRenderer:

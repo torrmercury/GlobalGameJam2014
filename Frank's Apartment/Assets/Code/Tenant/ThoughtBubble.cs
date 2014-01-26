@@ -6,12 +6,13 @@ public class ThoughtBubble : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
       //  renderer.enabled = false;
-		transform.LookAt (Camera.main.transform);
+		
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        transform.LookAt(Camera.main.transform);
 	    if (TenantAI.newGoal == true)
         {
             StartCoroutine("Bubble");
@@ -21,7 +22,7 @@ public class ThoughtBubble : MonoBehaviour {
     IEnumerable Bubble()
     {
         renderer.enabled = true;
-        //play audio
+        audio.Play();
         yield return new WaitForSeconds(3.5f);
 	}
 
