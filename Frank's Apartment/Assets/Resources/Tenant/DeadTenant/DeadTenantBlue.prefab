@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: DeadTenantBlue
   m_TagString: Tenant
@@ -28,22 +27,6 @@ Transform:
   m_LocalScale: {x: .446156412, y: .446156412, z: .446156412}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2264ab6d4508fbe4091929b6009ca947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deadBody: {fileID: 100000}
-  self: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  newTenant: {fileID: 0}
-  deadBodies: 0
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
