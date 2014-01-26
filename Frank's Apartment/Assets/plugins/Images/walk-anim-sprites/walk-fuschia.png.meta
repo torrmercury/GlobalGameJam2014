@@ -1,0 +1,180 @@
+fileFormatVersion: 2
+guid: 2b93a7d9dd97b4a42a6495e642e55e0b
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: walk-fuschia_0
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 89
+        width: 169
+        height: 620
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_1
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 77
+        width: 166
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_2
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 75
+        width: 208
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_3
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 75
+        width: 233
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_4
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 75
+        width: 210
+        height: 613
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_5
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 91
+        width: 204
+        height: 620
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_6
+      rect:
+        serializedVersion: 2
+        x: 2206
+        y: 131
+        width: 205
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_7
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 131
+        width: 226
+        height: 580
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_8
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 126
+        width: 245
+        height: 576
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_9
+      rect:
+        serializedVersion: 2
+        x: 3196
+        y: 126
+        width: 298
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_10
+      rect:
+        serializedVersion: 2
+        x: 3517
+        y: 91
+        width: 261
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_11
+      rect:
+        serializedVersion: 2
+        x: 3801
+        y: 77
+        width: 222
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_12
+      rect:
+        serializedVersion: 2
+        x: 4057
+        y: 82
+        width: 183
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_13
+      rect:
+        serializedVersion: 2
+        x: 4267
+        y: 91
+        width: 192
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-fuschia_14
+      rect:
+        serializedVersion: 2
+        x: 4484
+        y: 105
+        width: 215
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 

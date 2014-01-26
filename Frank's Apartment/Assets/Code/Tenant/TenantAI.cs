@@ -3,9 +3,16 @@ using System.Collections;
 using Vectrosity; // C#
 
 public class TenantAI : MonoBehaviour {
-    public body spawnBody;
+    public GameObject deadBody;
+	public GameObject spawnPoint;
+	public GameObject newTenant;
+	public GameObject hungerBubble;
+	public GameObject sexBubble;
+	public GameObject excretionBubble;
+	public GameObject sleepBubble;
+
+
     public static int scareCount = 0;
-	int Health = 5;
 	public int deadBodies;
 	int bodies;
     public static bool newGoal = false;
@@ -21,8 +28,12 @@ public class TenantAI : MonoBehaviour {
 //	VectorLine myLine;
 //	public Material lineMaterial;
 	float currentPos;
-
+	float destinyPos;
+	float currentZ;
+	float destinyZ;
+	
 	void Start () {
+		spawnPoint = GameObject.FindWithTag("Respawn");
         //dead body count
         bodies = deadBodies;
 
@@ -30,20 +41,33 @@ public class TenantAI : MonoBehaviour {
 		ChooseGoal();
 
 	}
-	
-	void Update () {
-		currentPos = transform.position.x;
 
-		if (currentPos - Destination.transform.position.x > 0) {
+
+	void Update () {
+		//set current pos, check vs destination pos to see what direction AI moving, set localScale accordingly.
+		currentPos = transform.position.x;
+		currentZ = transform.position.z;
+//		print ("destination coordinates are " + Destination.transform.position);
+		Vector3 destinationPos = Destination.transform.position;
+		destinyPos = destinationPos.x;
+		destinyZ = destinationPos.z;
+//		destinyPos = Destination.transform.position.x;
+		if (currentPos - destinyPos > 0) {
 			Vector3 tempScale = transform.localScale;
 			tempScale.x = 0.5f;
 			transform.localScale = tempScale;
 		}
 
-		if (currentPos - Destination.transform.position.x < 0) {
+		if (currentPos - destinyPos < 0) {
 			Vector3 tempScale = transform.localScale;
 			tempScale.x = -0.5f;
 			transform.localScale = tempScale;
+		}
+
+		if (currentPos - destinyPos < .25 && currentZ - destinyZ < .25) {
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+			ChooseGoal();
 		}
 
 		//start walking path
@@ -52,52 +76,97 @@ public class TenantAI : MonoBehaviour {
 //		transform.localscale.x = -x;
 		//Choose new Objective test
 		if (Input.GetKeyDown("space")) {
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+
 		    ChooseGoal();
             newGoal = true;
             newGoal = false;
 		}
 
-
-		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
-		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
-		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
-		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+		StartCoroutine(HoldUp());
 
 
+
+		if (Input.GetKeyDown("k")) {
+			Death ();
+		}
 //		MoveOne();
 //		if (transform.position.x >= Destination.transform.position.x) {
 //			MoveTwo();
 //	}
-	}
 
+	}
+void Death () {
+		Destroy(this.transform.gameObject);
+		Instantiate (deadBody, transform.position, Quaternion.Euler(270,270,0));
+//		StartCoroutine("NewTenant");
+		Instantiate (newTenant, spawnPoint.transform.position, Quaternion.identity);
+	}
     //when the character enters/touches a trigger, it dies
-    void OnTriggerEnter ()
+    void OnTriggerEnter (Collider other)
     {
-        body deadBody;
-        bodies += 1;
-        deadBodies = bodies;
-        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
-        Destroy(this);
+		if (other.gameObject.tag == "Floor") {
+			print ("OMG I RUN THROUGH WALLS");
+		}
+		else if (other.gameObject.tag == "Corpse") {
+			print ("EWWWWWWW!");
+		}
+		else {
+			Death ();
+		}
+//        body deadBody;
+//        bodies += 1;
+        //deadBodies = bodies;
+//        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
     }
+
+	IEnumerator HoldUp() {
+		print ("Wait for it");
+		yield return new WaitForSeconds(2f);
+		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
+		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
+		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+		print ("done waiting");
+	}
 
 	//function to choose an Objective
 	void ChooseGoal () {
 		//roll from 1 to 4 to make choice
-
 		int Goal = Random.Range (1, 5);
-
+		GameObject bubble;
 		if (Goal == 1) {
 			Objective = "Hunger";
+			bubble = hungerBubble;
+			bubble = Instantiate(hungerBubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
 			else if (Goal == 2) {
 			Objective = "Sleep";
+			bubble = sleepBubble;
+			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
 			else if (Goal == 3) {
 			Objective = "Sex";
+			bubble = sexBubble;
+			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
 			else if (Goal == 4) {
 			Objective = "Excretion";
+			bubble = excretionBubble;
+			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
+
+
+		//Destroy(bubble.transform.gameObject);
 
 		print(Objective);
 		ChooseObjective();

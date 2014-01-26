@@ -10,8 +10,12 @@ TagManager:
   - Excretion
   - Sleep
   - Hunger
-  - 
+  - Tenant
   - Wall
+  - Floor
+  - Door
+  - Corpse
+  - Bubble
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
