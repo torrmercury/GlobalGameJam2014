@@ -24,17 +24,14 @@ public class couch : MonoBehaviour {
         if (couchClicked == false)
         {
             couchClicked = true;
-        }
-
-        //spring pops out
-        if (couchClicked == false)
-        {
             collider.isTrigger = false;
         }
         else if (couchClicked == true)
         {
+            couchClicked = false;
             TenantAI.scareCount += 1;
             collider.isTrigger = true;
+            
 
             //needs a section on making the character go flying when the spring comes up
             //most likely use "public static Vector3 position" in the TenantAI code
@@ -55,4 +52,5 @@ public class couch : MonoBehaviour {
         curPosition.y = lockedYPos;
         transform.position = curPosition;
     }
+
 }

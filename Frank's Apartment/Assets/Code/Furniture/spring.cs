@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class spring : MonoBehaviour {
-    Animation Animation;
+    private Animation Animation;
 
 	// Use this for initialization
 	void Start () {
@@ -11,18 +11,20 @@ public class spring : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	    if (couch.couchClicked == true)
+    void Update()
+    {
+        Debug.Log("test");
+        if (couch.couchClicked == false && Animation.isPlaying == true)
         {
-            Animation.Play();
+            //Animation.Stop();
+            //Animation.Rewind("Spring");
+        }
+        
+        else if (couch.couchClicked == true && Animation.isPlaying == false)
+        {
+            Animation.Play("Spring");
             couch.couchClicked = false;
         }
-	}
-    /*
-    //Spring bounces for a few seconds
-    IEnumerable Spring()
-    {
         
-        yield return new WaitForSeconds(3.5f);
-    }*/
+    }
 }
