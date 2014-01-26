@@ -19,6 +19,7 @@ public class TenantAI : MonoBehaviour {
 //	//Vector3[] linePoints;
 //	VectorLine myLine;
 //	public Material lineMaterial;
+	float currentPos;
 
 	void Start () {
         //dead body count
@@ -30,10 +31,24 @@ public class TenantAI : MonoBehaviour {
 	}
 	
 	void Update () {
+		currentPos = transform.position.x;
+
+		if (currentPos - Destination.transform.position.x > 0) {
+			Vector3 tempScale = transform.localScale;
+			tempScale.x = 0.5f;
+			transform.localScale = tempScale;
+		}
+
+		if (currentPos - Destination.transform.position.x < 0) {
+			Vector3 tempScale = transform.localScale;
+			tempScale.x = -0.5f;
+			transform.localScale = tempScale;
+		}
+
 		//start walking path
 		//choose new path if interrupted
 //		RefreshLine();
-
+//		transform.localscale.x = -x;
 		//Choose new Objective test
 		if (Input.GetKeyDown("space")) {
 		    ChooseGoal();
