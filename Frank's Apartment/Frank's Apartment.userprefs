@@ -1,4 +1,8 @@
 ﻿<Properties>
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench />
+=======
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Tenant/TenantAI.cs">
     <Files>
@@ -7,6 +11,7 @@
       <File FileName="Assets/Code/Tenant/TenantAI.cs" Line="37" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
+>>>>>>> master
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

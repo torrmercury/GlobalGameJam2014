@@ -1014,7 +1014,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 945299968}
-  - 95: {fileID: 945299969}
   - 114: {fileID: 945299970}
   - 111: {fileID: 945299971}
   m_Layer: 0
@@ -1031,25 +1030,11 @@ Transform:
   m_PrefabInternal: {fileID: 1371577919}
   m_GameObject: {fileID: 945299967}
   m_LocalRotation: {x: -.186090305, y: .922960222, z: -.124161363, w: -.313207299}
-  m_LocalPosition: {x: .138221264, y: .474213958, z: -.182501018}
-  m_LocalScale: {x: .200000003, y: .200000018, z: .200000003}
+  m_LocalPosition: {x: -.259281158, y: -.20898807, z: -.182501018}
+  m_LocalScale: {x: .00999999978, y: .00999999978, z: .00999999978}
   m_Children:
   - {fileID: 214323731}
   m_Father: {fileID: 1213880227}
---- !u!95 &945299969
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 945299967}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 1
 --- !u!114 &945299970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,8 +1056,9 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 773552bab6663284b8135ddff57df12d, type: 2}
   m_Animations:
+  - {fileID: 0}
   - {fileID: 7400000, guid: 773552bab6663284b8135ddff57df12d, type: 2}
-  m_WrapMode: 0
+  m_WrapMode: 1
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
@@ -1793,6 +1779,26 @@ Prefab:
     - target: {fileID: 400066, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.20898807
+      objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.259281158
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 6d85b2693b79e3f42860a49a5c738091, type: 2}
