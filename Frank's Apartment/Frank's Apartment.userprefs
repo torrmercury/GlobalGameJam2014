@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Furniture/couch.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Tenant/TenantAI.cs">
     <Files>
-      <File FileName="Assets/Code/Furniture/couch.cs" Line="40" Column="13" />
+      <File FileName="Assets/Code/Furniture/couch.cs" Line="37" Column="9" />
+      <File FileName="Assets/Code/Tenant/TenantAI.cs" Line="94" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
