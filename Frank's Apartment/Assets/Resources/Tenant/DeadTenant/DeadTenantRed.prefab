@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21200000}
   m_Layer: 0
   m_Name: DeadTenantRed
-  m_TagString: Untagged
+  m_TagString: Tenant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22,7 +22,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: .500000179, y: .499999791, z: .499999881, w: -.50000006}
+  m_LocalRotation: {x: .500000238, y: .499999821, z: .499999911, w: -.500000119}
   m_LocalPosition: {x: 2.3665185, y: -5.61372758e-07, z: -4.2540799e-07}
   m_LocalScale: {x: .446156353, y: .446156353, z: .446156353}
   m_Children: []
