@@ -12,19 +12,12 @@ public class door : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-	    //if locked character cannot open door
-        if (locked == false)
-        {
-            collider.enabled = false;
-        }
-        else if (locked == true)
-        {
-            collider.enabled = true;
-        }
+
 	}
 
     void OnMouseDown()
     {
+        //clicked?
         if (clicked == false)
         {
             clicked = true;
@@ -34,6 +27,7 @@ public class door : MonoBehaviour {
             clicked = false;
         }
 
+        //lock the door
         if (clicked == false)
         {
             locked = false;
@@ -42,5 +36,21 @@ public class door : MonoBehaviour {
         {
             locked = true;
         }
+
+        //if locked character cannot open door
+        if (locked == false)
+        {
+            collider.enabled = false;
+        }
+        else if (locked == true)
+        {
+            collider.enabled = true;
+        }
+    }
+
+    //move the 
+    void OnMouseDrag()
+    {
+        transform.position = Vector3();
     }
 }

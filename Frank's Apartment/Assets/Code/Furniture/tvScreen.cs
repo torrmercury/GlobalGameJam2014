@@ -13,16 +13,7 @@ public class tvScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //turn the screen on/off
-        if (clicked == true)
-        {
-            renderer.enabled = true;
-        }
-
-        else if (clicked == false)
-        {
-            renderer.enabled = false;
-        }
+        
     }
     void OnMouseDown()
     {
@@ -35,5 +26,22 @@ public class tvScreen : MonoBehaviour
         {
             clicked = false;
         }
+
+        //turn the screen on/off
+        if (clicked == true)
+        {
+            renderer.enabled = true;
+            TenantAI.scareCount += 1;
+        }
+        else if (clicked == false)
+        {
+            renderer.enabled = false;
+        }
+    }
+
+    //move the 
+    void OnMouseDrag()
+    {
+        transform.position = Vector3();
     }
 }

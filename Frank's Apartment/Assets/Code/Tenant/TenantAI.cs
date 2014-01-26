@@ -4,6 +4,9 @@ using System.Collections;
 public class TenantAI : MonoBehaviour {
     public body spawnBody;
 
+    public static int scareCount;
+    int scared = 0;
+
 	int Health = 5;
 	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
 	string Objective;
@@ -16,6 +19,9 @@ public class TenantAI : MonoBehaviour {
 	void Start () {
         //dead body count
         bodies = deadBodies;
+
+        //scare count is 0 when the new tenant spawns
+        scareCount = 0;
 
 		//array of goals
 		//hunger, sleep, sex, excretion
@@ -35,6 +41,24 @@ public class TenantAI : MonoBehaviour {
 		    ChooseGoal();
 		}
 
+        if (scareCount != scared && scareCount < 3)
+        {
+            //play scared animation for 2 seconds
+
+
+            scared = scareCount;
+        }
+        else if (scareCount >= 3)
+        {
+            //play scared animation for 2 seconds
+
+
+            body deadBody;
+            bodies += 1;
+            deadBodies = bodies;
+            deadBody = Instantiate(spawnBody, transform.position, Quaternion.identity) as body;
+            Destroy(this);
+        }
 	}
 
     //when the character enters/touches a trigger, it dies
