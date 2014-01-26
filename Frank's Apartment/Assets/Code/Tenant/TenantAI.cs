@@ -85,7 +85,12 @@ void Death () {
     //when the character enters/touches a trigger, it dies
     void OnTriggerEnter (Collider other)
     {
-		Death ();
+		if (other.gameObject.tag == "Floor") {
+			print ("OMG I RUN THROUGH WALLS");
+		}
+		else {
+			Death ();
+		}
 //        body deadBody;
 //        bodies += 1;
         //deadBodies = bodies;
