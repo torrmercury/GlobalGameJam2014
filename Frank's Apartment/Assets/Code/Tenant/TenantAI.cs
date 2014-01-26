@@ -31,7 +31,7 @@ public class TenantAI : MonoBehaviour {
 	float destinyPos;
 	float currentZ;
 	float destinyZ;
-
+	
 	void Start () {
 		spawnPoint = GameObject.FindWithTag("Respawn");
         //dead body count
@@ -41,7 +41,8 @@ public class TenantAI : MonoBehaviour {
 		ChooseGoal();
 
 	}
-	
+
+
 	void Update () {
 		//set current pos, check vs destination pos to see what direction AI moving, set localScale accordingly.
 		currentPos = transform.position.x;
@@ -83,11 +84,9 @@ public class TenantAI : MonoBehaviour {
             newGoal = false;
 		}
 
+		StartCoroutine(HoldUp());
 
-		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
-		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
-		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
-		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+
 
 		if (Input.GetKeyDown("k")) {
 			Death ();
@@ -96,6 +95,7 @@ public class TenantAI : MonoBehaviour {
 //		if (transform.position.x >= Destination.transform.position.x) {
 //			MoveTwo();
 //	}
+
 	}
 void Death () {
 		Destroy(this.transform.gameObject);
@@ -120,10 +120,17 @@ void Death () {
         //deadBodies = bodies;
 //        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
     }
-//	IEnumerator NewTenant() {
-//		yield return new WaitForSeconds(3f);
-//		Instantiate (newTenant, spawnPoint.transform.position, Quaternion.identity);
-//	}
+
+	IEnumerator HoldUp() {
+		print ("Wait for it");
+		yield return new WaitForSeconds(2f);
+		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
+		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
+		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
+		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+		print ("done waiting");
+	}
+
 	//function to choose an Objective
 	void ChooseGoal () {
 		//roll from 1 to 4 to make choice
