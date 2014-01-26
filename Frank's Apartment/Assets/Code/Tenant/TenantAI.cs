@@ -8,6 +8,7 @@ public class TenantAI : MonoBehaviour {
 	int Health = 5;
 	public int deadBodies;
 	int bodies;
+    public static bool newGoal = false;
 
 //	string[] Goals = new string[] {"Hunger", "Sleep", "Sex", "Excretion"};
 	string Objective;
@@ -37,6 +38,8 @@ public class TenantAI : MonoBehaviour {
 		//Choose new Objective test
 		if (Input.GetKeyDown("space")) {
 		    ChooseGoal();
+            newGoal = true;
+            newGoal = false;
 		}
 
 
