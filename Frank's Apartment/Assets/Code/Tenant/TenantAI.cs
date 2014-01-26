@@ -123,24 +123,28 @@ void Death () {
 			bubble = hungerBubble;
 			bubble = Instantiate(hungerBubble, transform.position, Quaternion.identity) as GameObject;
 			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
 			else if (Goal == 2) {
 			Objective = "Sleep";
 			bubble = sleepBubble;
 			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
 			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
 			else if (Goal == 3) {
 			Objective = "Sex";
 			bubble = sexBubble;
 			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
 			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
 			else if (Goal == 4) {
 			Objective = "Excretion";
 			bubble = excretionBubble;
 			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
 			bubble.transform.parent = this.transform;
+			bubble.transform.localPosition = new Vector3 (0f,5f,0f);
 		}
 
 
