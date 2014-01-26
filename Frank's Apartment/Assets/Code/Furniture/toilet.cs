@@ -31,8 +31,7 @@ public class toilet : MonoBehaviour {
         }
         else if (clicked == true)
         {
-            clicked = false;
-            collider.isTrigger = false;
+
         }
 
         //for movement/drag
@@ -43,7 +42,7 @@ public class toilet : MonoBehaviour {
         {
             SpriteRenderer rend = GetComponent<SpriteRenderer>();
             rend.enabled = true;
-            Invoke("off", 8f);
+            Invoke("off", 5f);
         }
 	}
 
@@ -51,6 +50,8 @@ public class toilet : MonoBehaviour {
     {
         SpriteRenderer rend = GetComponent<SpriteRenderer>();
         rend.enabled = false;
+        clicked = false;
+        collider.isTrigger = false;
     }
 
     //move the drag
