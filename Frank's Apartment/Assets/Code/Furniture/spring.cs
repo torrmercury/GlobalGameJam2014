@@ -18,6 +18,7 @@ public class spring : MonoBehaviour {
         if (couch.couchClicked == true && animation.isPlaying == false)
         {
             animation.Play();
+            audio.Play();
             couch.couchClicked = false;
             StartCoroutine("SpringReset");
             Debug.Log("If statement works");

@@ -25,10 +25,11 @@ public class couch : MonoBehaviour {
         {
             couchClicked = true;
             collider.isTrigger = false;
+            
         }
         else if (couchClicked == true)
         {
-            couchClicked = false;
+            //couchClicked = false;
             TenantAI.scareCount += 1;
             collider.isTrigger = true;
             
