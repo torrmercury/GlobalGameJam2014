@@ -14,11 +14,11 @@ public class TenantAI : MonoBehaviour {
 	GameObject Destination;
 
 
-	Vector3 LineOrigin;
-	Vector3 LineFinish;
-	//Vector3[] linePoints;
-	VectorLine myLine;
-	public Material lineMaterial;
+//	Vector3 LineOrigin;
+//	Vector3 LineFinish;
+//	//Vector3[] linePoints;
+//	VectorLine myLine;
+//	public Material lineMaterial;
 
 	void Start () {
         //dead body count
@@ -26,22 +26,26 @@ public class TenantAI : MonoBehaviour {
 
 		//Run function to choose Objective
 		ChooseGoal();
+
 	}
 	
 	void Update () {
 		//start walking path
 		//choose new path if interrupted
-		RefreshLine();
+//		RefreshLine();
 
 		//Choose new Objective test
 		if (Input.GetKeyDown("space")) {
 		    ChooseGoal();
 		}
 
+
 		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
 		Vector3 secondMove = new Vector3(transform.position.x, 1, Destination.transform.position.z);
 		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
 		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
+
+
 //		MoveOne();
 //		if (transform.position.x >= Destination.transform.position.x) {
 //			MoveTwo();
@@ -103,21 +107,22 @@ public class TenantAI : MonoBehaviour {
 		}
 		print (Destination);
 		//draw line to destination
-		myLine = VectorLine.SetLine3D(Color.red, LineOrigin, LineFinish);
+//		myLine = VectorLine.SetLine3D(Color.red, LineOrigin, LineFinish);
+
 	}
 
-	void SetLinePoints () {
-		//Set the Line Points
-		LineOrigin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-		LineFinish = new Vector3(Destination.transform.position.x, Destination.transform.position.y, Destination.transform.position.z);
-	}
+//	void SetLinePoints () {
+//		//Set the Line Points
+//		LineOrigin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+//		LineFinish = new Vector3(Destination.transform.position.x, Destination.transform.position.y, Destination.transform.position.z);
+//	}
 
-	void RefreshLine() {
-		//Resets line points and then draws line.
-		//VectorLine.Destroy (myLine);
-		SetLinePoints();
-		myLine.Draw();
-	}
+//	void RefreshLine() {
+//		//Resets line points and then draws line.
+//		//VectorLine.Destroy (myLine);
+//		SetLinePoints();
+//		myLine.Draw();
+//	}
 
 //	void MoveOne() {
 //		Vector3 firstMove = new Vector3(Destination.transform.position.x, 1, transform.position.z);
