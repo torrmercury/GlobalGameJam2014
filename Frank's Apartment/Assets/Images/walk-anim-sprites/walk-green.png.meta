@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f164fa5abcd84494f87e2c78929acd20
+guid: f90d170feb28549cfa306af2dd927c70
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -41,148 +41,139 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: walk_0
+    - name: walk-green_0
       rect:
         serializedVersion: 2
-        x: 90
-        y: 27
-        width: 171
-        height: 622
+        x: 160
+        y: 89
+        width: 169
+        height: 620
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_1
+    - name: walk-green_1
       rect:
         serializedVersion: 2
-        x: 428
-        y: 22
-        width: 171
-        height: 618
+        x: 493
+        y: 77
+        width: 166
+        height: 615
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_2
+    - name: walk-green_2
       rect:
         serializedVersion: 2
-        x: 755
-        y: 27
-        width: 176
+        x: 823
+        y: 75
+        width: 208
+        height: 617
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-green_3
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 75
+        width: 233
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: walk-green_4
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 75
+        width: 210
         height: 613
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_3
+    - name: walk-green_5
       rect:
         serializedVersion: 2
-        x: 1078
-        y: 22
-        width: 195
-        height: 603
+        x: 1873
+        y: 91
+        width: 204
+        height: 620
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_4
+    - name: walk-green_6
       rect:
         serializedVersion: 2
-        x: 1429
-        y: 32
-        width: 171
-        height: 603
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: walk_5
-      rect:
-        serializedVersion: 2
-        x: 1757
-        y: 37
-        width: 190
-        height: 598
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: walk_6
-      rect:
-        serializedVersion: 2
-        x: 2099
-        y: 61
+        x: 2206
+        y: 131
         width: 205
-        height: 574
+        height: 580
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_7
+    - name: walk-green_7
       rect:
         serializedVersion: 2
-        x: 2436
-        y: 61
-        width: 200
-        height: 593
+        x: 2550
+        y: 131
+        width: 226
+        height: 580
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_8
+    - name: walk-green_8
       rect:
         serializedVersion: 2
-        x: 2778
-        y: 66
-        width: 230
-        height: 578
+        x: 2889
+        y: 126
+        width: 245
+        height: 576
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_9
+    - name: walk-green_9
       rect:
         serializedVersion: 2
-        x: 3115
-        y: 61
-        width: 249
-        height: 579
+        x: 3196
+        y: 126
+        width: 298
+        height: 560
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_10
+    - name: walk-green_10
       rect:
         serializedVersion: 2
-        x: 3423
-        y: 61
-        width: 303
-        height: 564
+        x: 3517
+        y: 91
+        width: 261
+        height: 588
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_11
+    - name: walk-green_11
       rect:
         serializedVersion: 2
-        x: 3746
-        y: 37
-        width: 264
-        height: 593
+        x: 3801
+        y: 77
+        width: 222
+        height: 609
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_12
+    - name: walk-green_12
       rect:
         serializedVersion: 2
-        x: 4029
-        y: 17
-        width: 225
-        height: 613
+        x: 4057
+        y: 82
+        width: 183
+        height: 610
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_13
+    - name: walk-green_13
       rect:
         serializedVersion: 2
-        x: 4283
-        y: 22
-        width: 186
-        height: 613
+        x: 4267
+        y: 91
+        width: 192
+        height: 611
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: walk_14
+    - name: walk-green_14
       rect:
         serializedVersion: 2
-        x: 4493
-        y: 22
-        width: 191
-        height: 613
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: walk_15
-      rect:
-        serializedVersion: 2
-        x: 4708
-        y: 22
-        width: 220
-        height: 613
+        x: 4484
+        y: 105
+        width: 215
+        height: 611
       alignment: 0
       pivot: {x: 0, y: 0}
   spritePackingTag: 
