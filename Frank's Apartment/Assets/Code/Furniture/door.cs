@@ -4,6 +4,9 @@ using System.Collections;
 public class door : MonoBehaviour {
     bool clicked = false;
     bool locked = false;
+    Vector3 screenPoint;
+    Vector3 offset;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -46,11 +49,18 @@ public class door : MonoBehaviour {
         {
             collider.enabled = true;
         }
+
+        //for movement/drag
+        screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
 
-    //move the 
+    //move the door
     void OnMouseDrag()
     {
-        transform.position = Vector3();
+        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+
+        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+        transform.position = curPosition;
     }
 }
