@@ -3,9 +3,12 @@ using System.Collections;
 using Vectrosity; // C#
 
 public class TenantAI : MonoBehaviour {
-    public body spawnBody;
+    public GameObject deadBody;
+	public GameObject self;
+	public GameObject spawnPoint;
+	public GameObject newTenant;
+
     public static int scareCount = 0;
-	int Health = 5;
 	public int deadBodies;
 	int bodies;
     public static bool newGoal = false;
@@ -21,8 +24,11 @@ public class TenantAI : MonoBehaviour {
 //	VectorLine myLine;
 //	public Material lineMaterial;
 	float currentPos;
+	float destinyPos;
 
 	void Start () {
+		self = GameObject.FindWithTag("Tenant");
+		spawnPoint = GameObject.FindWithTag("Respawn");
         //dead body count
         bodies = deadBodies;
 
@@ -32,15 +38,15 @@ public class TenantAI : MonoBehaviour {
 	}
 	
 	void Update () {
+		//set current pos, check vs destination pos to see what direction AI moving, set localScale accordingly.
 		currentPos = transform.position.x;
-
-		if (currentPos - Destination.transform.position.x > 0) {
+		destinyPos = Destination.transform.position.x;
+		if (currentPos - destinyPos > 0) {
 			Vector3 tempScale = transform.localScale;
 			tempScale.x = 0.5f;
 			transform.localScale = tempScale;
 		}
-
-		if (currentPos - Destination.transform.position.x < 0) {
+		if (currentPos - destinyPos < 0) {
 			Vector3 tempScale = transform.localScale;
 			tempScale.x = -0.5f;
 			transform.localScale = tempScale;
@@ -63,21 +69,27 @@ public class TenantAI : MonoBehaviour {
 		transform.position = Vector3.Lerp(transform.position, firstMove, Time.deltaTime);
 		transform.position = Vector3.Lerp(transform.position, secondMove, Time.deltaTime);
 
-
+		if (Input.GetKeyDown("k")) {
+			Death ();
+		}
 //		MoveOne();
 //		if (transform.position.x >= Destination.transform.position.x) {
 //			MoveTwo();
 //	}
 	}
-
+void Death () {
+		Destroy(self);
+		Instantiate (deadBody, transform.position, Quaternion.Euler(270,270,0));
+		Instantiate (newTenant, spawnPoint.transform.position, Quaternion.identity);
+	}
     //when the character enters/touches a trigger, it dies
-    void OnTriggerEnter ()
+    void OnTriggerEnter (Collider other)
     {
-        body deadBody;
-        bodies += 1;
-        deadBodies = bodies;
-        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
-        Destroy(this);
+		Death ();
+//        body deadBody;
+//        bodies += 1;
+        //deadBodies = bodies;
+//        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
     }
 
 	//function to choose an Objective
