@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Vectrosity; // C#
 
 public class TenantAI : MonoBehaviour {
     public body spawnBody;
@@ -9,6 +10,11 @@ public class TenantAI : MonoBehaviour {
 	string Objective;
 	GameObject Destination;
 
+	VectorLine myLine;
+	Vector3 LineOrigin;
+	Vector3 LineFinish;
+	public Material lineMaterial;
+
 	public int deadBodies;
 	int bodies;
 	
@@ -16,7 +22,6 @@ public class TenantAI : MonoBehaviour {
 	void Start () {
         //dead body count
         bodies = deadBodies;
-
 		//array of goals
 		//hunger, sleep, sex, excretion
 		//choose path
@@ -28,8 +33,7 @@ public class TenantAI : MonoBehaviour {
 	void Update () {
 		//start walking path
 		//choose new path if interrupted
-			//Interruption
-
+		RefreshLine();
 		//Choose new Objective test
 		if (Input.GetKeyDown("space")) {
 		    ChooseGoal();
@@ -65,9 +69,7 @@ public class TenantAI : MonoBehaviour {
 			Objective = "Excretion";
 		}
 
-		//figure out how to print to test objective selection
-		//Debug.Log (Objective);
-		Debug.Log(Objective);
+		print(Objective);
 		ChooseObjective();
 
 	}
@@ -92,6 +94,23 @@ public class TenantAI : MonoBehaviour {
 			}
 		}
 		print (Destination);
+		//draw line to destination
+		myLine = VectorLine.SetLine3D(Color.green, LineOrigin, LineFinish);
+
+		
+	}
+
+	void SetLinePoints () {
+		//Set the Line Points
+		LineOrigin = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+		LineFinish = new Vector3(Destination.transform.position.x, Destination.transform.position.y, Destination.transform.position.z);
+	}
+
+	void RefreshLine() {
+		//Resets line points and then draws line.
+		//VectorLine.Destroy (myLine);
+		SetLinePoints();
+		myLine.Draw();
 	}
 
 }
