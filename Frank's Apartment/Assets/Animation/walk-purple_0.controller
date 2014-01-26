@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: walk_0
+  m_Name: walk-purple_0
   serializedVersion: 2
   m_AnimatorParameters: []
   m_AnimatorLayers:
@@ -25,11 +25,11 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Walk
+  m_Name: walkPurpleAnim
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: eeb60c52f0ab346e9b4c33c4412337b6, type: 2}
+  - {fileID: 7400000, guid: 0fde5db15b01e4b6f8e3e242b0132246, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
