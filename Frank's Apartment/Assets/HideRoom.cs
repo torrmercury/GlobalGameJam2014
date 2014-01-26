@@ -24,6 +24,10 @@ public class HideRoom : MonoBehaviour {
 		if (other.gameObject.tag == "Tenant") {
 			ShowTheRoom ();
 		}
+
+		if (other.gameObject.tag == "Corpse") {
+			HideTheRoom ();
+		}
 	}
 
 	void HideTheRoom () 
