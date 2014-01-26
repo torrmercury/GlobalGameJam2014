@@ -5,7 +5,7 @@ public class ThoughtBubble : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        renderer.enabled = false;
+      //  renderer.enabled = false;
 		transform.LookAt (Camera.main.transform);
 	}
 	

@@ -6,6 +6,10 @@ public class TenantAI : MonoBehaviour {
     public GameObject deadBody;
 	public GameObject spawnPoint;
 	public GameObject newTenant;
+	public GameObject hungerBubble;
+	public GameObject sexBubble;
+	public GameObject excretionBubble;
+	public GameObject sleepBubble;
 
 
     public static int scareCount = 0;
@@ -39,7 +43,10 @@ public class TenantAI : MonoBehaviour {
 	void Update () {
 		//set current pos, check vs destination pos to see what direction AI moving, set localScale accordingly.
 		currentPos = transform.position.x;
-		destinyPos = Destination.transform.position.x;
+//		print ("destination coordinates are " + Destination.transform.position);
+		Vector3 destinationPos = Destination.transform.position;
+		destinyPos = destinationPos.x;
+//		destinyPos = Destination.transform.position.x;
 		if (currentPos - destinyPos > 0) {
 			Vector3 tempScale = transform.localScale;
 			tempScale.x = 0.5f;
@@ -57,6 +64,9 @@ public class TenantAI : MonoBehaviour {
 //		transform.localscale.x = -x;
 		//Choose new Objective test
 		if (Input.GetKeyDown("space")) {
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+			Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+
 		    ChooseGoal();
             newGoal = true;
             newGoal = false;
@@ -79,6 +89,7 @@ public class TenantAI : MonoBehaviour {
 void Death () {
 		Destroy(this.transform.gameObject);
 		Instantiate (deadBody, transform.position, Quaternion.Euler(270,270,0));
+//		StartCoroutine("NewTenant");
 		Instantiate (newTenant, spawnPoint.transform.position, Quaternion.identity);
 	}
     //when the character enters/touches a trigger, it dies
@@ -98,25 +109,42 @@ void Death () {
         //deadBodies = bodies;
 //        deadBody = Instantiate (spawnBody, transform.position, Quaternion.identity) as body;
     }
-
+//	IEnumerator NewTenant() {
+//		yield return new WaitForSeconds(3f);
+//		Instantiate (newTenant, spawnPoint.transform.position, Quaternion.identity);
+//	}
 	//function to choose an Objective
 	void ChooseGoal () {
 		//roll from 1 to 4 to make choice
-
 		int Goal = Random.Range (1, 5);
-
+		GameObject bubble;
 		if (Goal == 1) {
 			Objective = "Hunger";
+			bubble = hungerBubble;
+			bubble = Instantiate(hungerBubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
 		}
 			else if (Goal == 2) {
 			Objective = "Sleep";
+			bubble = sleepBubble;
+			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
 		}
 			else if (Goal == 3) {
 			Objective = "Sex";
+			bubble = sexBubble;
+			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
 		}
 			else if (Goal == 4) {
 			Objective = "Excretion";
+			bubble = excretionBubble;
+			bubble = Instantiate(bubble, transform.position, Quaternion.identity) as GameObject;
+			bubble.transform.parent = this.transform;
 		}
+
+
+		//Destroy(bubble.transform.gameObject);
 
 		print(Objective);
 		ChooseObjective();
