@@ -2,33 +2,33 @@
 using System.Collections;
 
 public class spring : MonoBehaviour {
-    private Animation Animation;
+    //private Animation Animation;
     public spring spawnspring;
 
 	// Use this for initialization
 	void Start () {
         //StartCoroutine("Spring");
-        Animation = GetComponent<Animation>();
+        /*Animation = GetComponent<Animation>();
+        Animation.Stop();*/
 	}
 	
 	// Update is called once per frame
     void Update()
     {
-        if (couch.couchClicked == true && Animation.isPlaying == false)
+        if (couch.couchClicked == true && animation.isPlaying == false)
         {
-            Animation.Play("Spring");
+            animation.Play();
             couch.couchClicked = false;
-            StartCoroutine("SpringGo");
+            StartCoroutine("SpringReset");
+            Debug.Log("If statement works");
         }
+        //Debug.Log("update works");
     }
 
-    IEnumerator SpringGo()
+    IEnumerator SpringReset()
     {
-        Vector3 origPos = transform.position;
-        Debug.Log(origPos);
         yield return new WaitForSeconds(3f);
-        spring newspring;
-        newspring = Instantiate(spawnspring, origPos, Quaternion.identity) as spring;
-        Destroy(gameObject);
+        animation.Rewind();
+        Debug.Log("coroutine works");
     }
 }
