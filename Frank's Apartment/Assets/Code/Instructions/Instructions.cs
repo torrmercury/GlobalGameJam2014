@@ -14,9 +14,8 @@ public class Instructions : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		GUI.Box(new Rect (100, 100, 300, 100), "You are the apartment.\n You have the power.\n All tenants must die.");{
-		
-n		}
-	
+		GUI.Box(new Rect (100, 100, 300, 100), "You are the apartment.\n You have the power.\n All tenants must die.");
 	}
+	
+
 }
