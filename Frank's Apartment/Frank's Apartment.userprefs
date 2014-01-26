@@ -1,11 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/HideRoom.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/Tenant/TenantAI.cs">
     <Files>
       <File FileName="Assets/Code/Furniture/couch.cs" Line="37" Column="48" />
       <File FileName="Assets/Code/Furniture/door.cs" Line="1" Column="1" />
-      <File FileName="Assets/Code/Tenant/TenantAI.cs" Line="126" Column="1" />
+      <File FileName="Assets/Code/Tenant/TenantAI.cs" Line="126" Column="51" />
       <File FileName="Assets/HideRoom.cs" Line="15" Column="3" />
+      <File FileName="Assets/CharacterRoomLocation.cs" Line="18" Column="24" />
+      <File FileName="Assets/Code/Furniture/spring.cs" Line="1" Column="1" />
+      <File FileName="Assets/Code/Tenant/Spawn.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
