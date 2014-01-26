@@ -5,7 +5,7 @@ public class tvScreen : MonoBehaviour
 {
     Vector3 screenPoint;
     Vector3 offset;
-    bool clicked = false;
+    bool clicked = true;
     float lockedYPos = 1.2f;
     public AudioClip onSound;
     public AudioClip offSound;
@@ -14,7 +14,9 @@ public class tvScreen : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        renderer.enabled = false;
+        audio.clip = maintain;
+        audio.Play();
+        audio.loop = enabled;
     }
 
     // Update is called once per frame
@@ -31,15 +33,15 @@ public class tvScreen : MonoBehaviour
         if (clicked == false)
         {
             clicked = true;
-            Invoke("off", 0f);
+            Invoke("on", 0f);
+            Invoke("staticPlay", .6f);
             renderer.enabled = true;
             TenantAI.scareCount += 1;
         }
         else if (clicked == true)
         {
             clicked = false;
-            Invoke("on", 0f);
-            Invoke("staticPlay", .6f);
+            Invoke("off", 0f);
             renderer.enabled = false;
         }
         
@@ -59,12 +61,14 @@ public class tvScreen : MonoBehaviour
     {
         audio.clip = offSound;
         audio.Play();
+        audio.loop = false;
     }
 
     void staticPlay()
     {
         audio.clip = maintain;
         audio.Play();
+        audio.loop = enabled;
     }
     
     //move the tv

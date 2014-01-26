@@ -791,6 +791,10 @@ Prefab:
       propertyPath: ded
       value: 
       objectReference: {fileID: 8300000, guid: e7d13f27b107845e89d36ef7305e46b1, type: 3}
+    - target: {fileID: 11400000, guid: 2d6b6f3a5dcd4cd42b619da115ca73d2, type: 2}
+      propertyPath: onSound
+      value: 
+      objectReference: {fileID: 8300000, guid: d5ddcf36a3fd64a828382205d55ffce1, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d6b6f3a5dcd4cd42b619da115ca73d2, type: 2}
   m_RootGameObject: {fileID: 516682103}
@@ -1361,6 +1365,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8152f9ac7904c4abbd06a89528e32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSound: {fileID: 8300000, guid: e0d1be6f51d4547cdaf0ebe26b583f0d, type: 3}
+  offSound: {fileID: 8300000, guid: 149ee9207562a4be78133e4aa219db79, type: 3}
+  maintain: {fileID: 8300000, guid: 2cd200621b5454f8bb5afd439d47c7ed, type: 3}
 --- !u!212 &626754694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1850,7 +1857,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: a8ddfa3111fcc47958647e9b98214550, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .504999995
   m_Pitch: 1
   Loop: 1
   Mute: 0
