@@ -7,9 +7,9 @@ public class portrait : MonoBehaviour
     Vector3 screenPoint;
     Vector3 offset;
     int whatFranksay;
-    public AudioClip franku;
-    public AudioClip lazer;
-    public AudioClip ded;
+    public AudioClip onSound;
+    public AudioClip offSound;
+    public AudioClip maintain;
 
     // Use this for initialization
     void Start()
@@ -31,25 +31,32 @@ public class portrait : MonoBehaviour
         if (clicked == false)
         {
             clicked = true;
+            Invoke("off", 0f);
         }
         else if (clicked == true)
         {
             clicked = false;
-            whatFranksay = Random.Range(0, 3);
-            if (whatFranksay == 0)
-            {
-                audio.clip = franku;
-            }
-            else if (whatFranksay == 1)
-            {
-                audio.clip = ded;
-            }
-            else if (whatFranksay == 2)
-            {
-                audio.clip = lazer;
-            }
-            audio.Play();
+            Invoke("on", 0f);
+            Invoke("staticPlay", .6f);
             TenantAI.scareCount += 1;
         }
+    }
+
+    void on()
+    {
+        audio.clip = onSound;
+        audio.Play();
+    }
+
+    void off()
+    {
+        audio.clip = offSound;
+        audio.Play();
+    }
+
+    void staticPlay()
+    {
+        audio.clip = maintain;
+        audio.Play();
     }
 }
