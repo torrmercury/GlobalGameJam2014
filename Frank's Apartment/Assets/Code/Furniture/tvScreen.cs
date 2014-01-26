@@ -41,7 +41,7 @@ public class tvScreen : MonoBehaviour
         }
     }
 
-    //move the 
+    //move the tv
     void OnMouseDrag()
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
