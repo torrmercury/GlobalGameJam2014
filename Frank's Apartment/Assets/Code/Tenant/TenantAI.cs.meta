@@ -4,7 +4,12 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - deadBody: {fileID: 100000, guid: 8777a57b06fd9471e9e32ac1d835b3c1, type: 2}
-  - self: {instanceID: 0}
+  - spawnPoint: {instanceID: 0}
+  - newTenant: {instanceID: 0}
+  - hungerBubble: {fileID: 100000, guid: 58621eee912b646acbf97e33924e228a, type: 2}
+  - sexBubble: {fileID: 100000, guid: 1ebbbf163fdde46ab87ebfc7eee8211b, type: 2}
+  - excretionBubble: {fileID: 100000, guid: ec140f18143424e7ab94dc295f33e1fc, type: 2}
+  - sleepBubble: {fileID: 100000, guid: c68221038fc884ef29656360733302e1, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
