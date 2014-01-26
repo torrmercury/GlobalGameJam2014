@@ -2,14 +2,15 @@
 using System.Collections;
 
 public class toilet : MonoBehaviour {
-    public static bool toiletClicked;
+    bool clicked;
     Vector3 screenPoint;
     Vector3 offset;
 
 
 	// Use this for initialization
 	void Start () {
-	
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        rend.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -21,23 +22,36 @@ public class toilet : MonoBehaviour {
 	{
         //play the water spout
         //was it clicked?
-        if (toiletClicked == false)
+        if (clicked == false)
         {
-            toiletClicked = true;
+            clicked = true;
             audio.Play();
             TenantAI.scareCount += 1;
             collider.isTrigger = true;
         }
-        else if (toiletClicked == true)
+        else if (clicked == true)
         {
-            toiletClicked = false;
+            clicked = false;
             collider.isTrigger = false;
         }
 
         //for movement/drag
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+
+        if (clicked)
+        {
+            SpriteRenderer rend = GetComponent<SpriteRenderer>();
+            rend.enabled = true;
+            Invoke("off", 8f);
+        }
 	}
+
+    void off()
+    {
+        SpriteRenderer rend = GetComponent<SpriteRenderer>();
+        rend.enabled = false;
+    }
 
     //move the drag
     void OnMouseDrag()
