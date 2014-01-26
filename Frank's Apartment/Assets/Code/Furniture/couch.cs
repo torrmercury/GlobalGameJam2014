@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class couch : MonoBehaviour {
-    bool clicked;
     Vector3 screenPoint;
     Vector3 offset;
+    float lockedYPos = .6f;
+    public static bool couchClicked = false;
 
 	// Use this for initialization
 	void Start () {
@@ -20,27 +21,21 @@ public class couch : MonoBehaviour {
     void OnMouseDown()
     {
         //was it clicked?
-        if (clicked == false)
+        if (couchClicked == false)
         {
-            clicked = true;
-        }
-        else if (clicked == true)
-        {
-            clicked = false;
+            couchClicked = true;
         }
 
         //spring pops out
-        if (clicked == false)
+        if (couchClicked == false)
         {
-            renderer.enabled = false;
             collider.isTrigger = false;
         }
-        else if (clicked == true)
+        else if (couchClicked == true)
         {
             TenantAI.scareCount += 1;
-            renderer.enabled = true;
             collider.isTrigger = true;
-            
+
             //needs a section on making the character go flying when the spring comes up
             //most likely use "public static Vector3 position" in the TenantAI code
             //which translates here as TenantAI.position
@@ -48,15 +43,16 @@ public class couch : MonoBehaviour {
 
         //for movement/drag
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
-        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, 4f * Input.mousePosition.y, screenPoint.z));
+
     }
 
     //move the couch
     void OnMouseDrag()
     {
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-
+        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, 4f * Input.mousePosition.y, screenPoint.z);
         Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
+        curPosition.y = lockedYPos;
         transform.position = curPosition;
     }
 }
